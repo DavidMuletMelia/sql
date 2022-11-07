@@ -32,3 +32,46 @@ Select ProductName as nombre_producto, price as precio_producto
 FROM Products
 WHERE Price > (Select avg(price) FROM products)
 order by precio_producto asc;
+
+
+Obtener los nomrbes de los productos de la tienda y el precio
+SELECT Name, Price
+FROM Articulos
+
+Obtener los nomrbes de los productos de la tienda de los que el precio sea mayor o igual a 200
+SELECT Name
+FROM Articulos
+WHERE Price ≥ '200';
+
+SELECT *
+FROM Articulos
+WHERE Price = BETWEEN 60 AND 120;
+
+
+Obtener los precios de los productos y el precio de estos en pesetas (multiplicado por 166.88)
+SELECT Name, Price *166.88
+FROM Articulos; (no del todo bien)
+
+SELECT Name, Price *166.88 AS Pesetas
+FROM Articulos;
+ (ahora ya si bien)
+
+Selecciona el precio medio de los productos
+SELECT AVG(Price)
+FROM Articulos
+
+Obtener el precio medio de los articulos cuyo codigo de fabricante sea 2
+SELECT AVG(Price)
+FROM Articulos
+WHERE Codigo = 2;
+
+Obtener el numero de articulos cuyo precio sea mayor o igual que 180
+SELECT Count(*) AS Num_Articulos
+FROM Article
+WHERE Price >= 180;
+
+Nombre y precio articulos cuyo precio sea mayor o igual a 180 ordenar desc por precio y por nombre
+SELECT Name, Price
+FROM Article
+WHERE Price >= 180;
+ORDER BY Price DESC AND Name ASC;
